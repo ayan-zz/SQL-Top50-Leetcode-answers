@@ -1,0 +1,24 @@
+	LEETCODE TOP 50 SQL INTERVIEW QUESTIONS AND ANSWERS:
+
+	PART O1: SELECT SATATEMENT
+	
+	Q 1757: RECYCLABLE AND LOW FAT PRODUCTS
+
+	MySQL Query: select product_id from Products where low_fats = 'Y' and recyclable = 'Y';
+
+	Q 584: FIND CUSTOMER REFREE
+
+	MySQL Query: select name from Customer where referee_id!=2 or referee_id is null;
+
+	Q 595: BIG COUNTRIES
+	
+	MySQL Query: select name,population,area from World where area>=3000000 or population>=25000000;
+
+	Q 1148: ARTICLE VIEWS I
+
+	MySQL Query: select distinct viewer_id as id from Views where viewer_id=author_id order by id asc;
+
+	Q 1683: INVALID TWEETS
+
+	MySQL Query: select tweet_id from Tweets where length(content)>15;
+
