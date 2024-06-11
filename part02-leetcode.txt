@@ -6,7 +6,7 @@
 	
 	MySQL Query: 
 	select un.unique_id, e.name
-f	rom EmployeeUNI un 
+	from EmployeeUNI un 
 	right join Employees e on e.id=un.id;
 
 	Q1068: PRODUCT SALES ANALYSIS I
@@ -16,7 +16,7 @@ f	rom EmployeeUNI un
 	from Product p
 	join Sales s on s.product_id = p.product_id;
 
-	Q1581 : CUSTOMER WHO VISITED BUT DID NOT MAKE ANY TRANSACTION
+	Q1581: CUSTOMER WHO VISITED BUT DID NOT MAKE ANY TRANSACTION
 
 	MySQL Query:
 	select v.customer_id, count(v.visit_id) as count_no_trans 
