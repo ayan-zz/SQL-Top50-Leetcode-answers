@@ -1,0 +1,38 @@
+	LEETCODE TOP 50 SQL INTERVIEW QUESTIONS AND ANSWERS:
+
+	PART O1: JOIN SATATEMENT
+	
+	Q1378: REPLACE EMPLOYEE ID WITH UNIQUE IDENTIFIER
+	
+	MySQL Query: 
+	select un.unique_id, e.name
+f	rom EmployeeUNI un 
+	right join Employees e on e.id=un.id;
+
+	Q1068: PRODUCT SALES ANALYSIS I
+	
+	MySQL Query:
+	select p.product_name, s.year, s.price
+	from Product p
+	join Sales s on s.product_id = p.product_id;
+
+	Q1581 : CUSTOMER WHO VISITED BUT DID NOT MAKE ANY TRANSACTION
+
+	MySQL Query:
+	select v.customer_id, count(v.visit_id) as count_no_trans 
+	from Visits v 
+	left join Transactions t on v.visit_id=t.visit_id
+	where t.transaction_id is null 
+	group by v.customer_id;
+	
+	Q197: RISING TEMPERATURE
+
+	MySQL Query:
+	select w2.id 
+	from Weather w1
+	join Weather w2
+	where datediff(w2.recordDate,w1.recordDate)=1 and
+	w2.temperature> w1.temperature;
+
+
+
