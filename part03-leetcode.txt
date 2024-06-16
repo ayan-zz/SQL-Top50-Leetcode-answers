@@ -1,0 +1,23 @@
+	LEETCODE TOP 50 SQL INTERVIEW QUESTIONS AND ANSWERS:
+
+	PART O2: JOIN SATATEMENT
+	
+	Q1661: AVERAGE TIME OF PROCESS PER MACHINE
+	
+	MySQL Query: 
+	select a1.machine_id, round(avg(a2.timestamp-a1.timestamp),3) as processing_time
+	from Activity a1
+	join Activity a2 on a1.process_id=a2.process_id 
+	and a1.machine_id=a2.machine_id 
+	and a1.timestamp<a2.timestamp
+	group by a1.machine_id;
+
+	Q577: EMPLOYEE BONUS
+	
+	MySQL Query:
+	select e.name, b.bonus
+	from Employee e left join Bonus b
+	on b.empId=e.empId
+	where b.bonus <1000 or b.bonus is null;
+
+	
