@@ -1,3 +1,7 @@
+                                    ****************************************************
+                                    LEETCODE TOP 50 SQL INTERVIEW QUESTIONS AND ANSWERS:
+                                    ****************************************************
+
 Q1280: STUDENTS AND EXAMINATION
 
 MYSQL QUERY:
@@ -7,5 +11,29 @@ from Students s cross join Subjects sub
 left join Examinations e on s.student_id=e.student_id and sub.subject_name=e.subject_name
 group by s.student_id, sub.subject_name
 order by s.student_id, sub.subject_name;
+
+----------------------------------------------------------
+
+Q570: MANAGERS WITH AT LEAST 5 DIRECT REPORTS
+
+MYSQL QUERY:
+
+select e1.name
+from Employee e1 join Employee e2
+on e1.id=e2.managerId
+group by e2.managerId having count(e2.managerId)>=5;
+
+------------------------------------------------------------
+
+Q1934: CONFIRMATION RATE
+
+MYSQL QUERY:
+
+select s.user_id, round(avg(if(c.action="confirmed",1,0)),2) as confirmation_rate
+from Signups s left join Confirmations c
+on s.user_id=c.user_id
+group by s.user_id; 
+
+--------------------------------------------------------------
 
 
