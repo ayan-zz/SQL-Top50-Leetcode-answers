@@ -32,3 +32,13 @@ on p.employee_id=e.employee_id
 group by p.project_id;
 ------------------------------------------------------------------------------------------
 
+Q1633. Percentage of users Attended a Contest
+
+MySQL Query:
+
+select r.contest_id, round(count(distinct(r.user_id))*100/(select count(user_id) from Users),2)
+as percentage from Register r
+group by r.contest_id
+order by percentage desc, r.contest_id;
+--------------------------------------------------------------------------------------------
+
