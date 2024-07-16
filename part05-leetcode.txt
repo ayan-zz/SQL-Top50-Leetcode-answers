@@ -42,3 +42,13 @@ group by r.contest_id
 order by percentage desc, r.contest_id;
 --------------------------------------------------------------------------------------------
 
+Q1211. Query Quality and Percentage
+
+MySQL Query:
+
+select query_name, round(avg(rating/position),2) as quality,
+round(avg(rating<3)*100,2) as poor_query_percentage
+from Queries
+where query_name is not null
+group by query_name
+--------------------------------------------------------------------------------------------
