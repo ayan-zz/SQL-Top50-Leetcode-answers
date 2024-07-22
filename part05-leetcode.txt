@@ -52,3 +52,14 @@ from Queries
 where query_name is not null
 group by query_name
 --------------------------------------------------------------------------------------------
+
+Q1193 Monthly Transactions I
+
+MySQL Query:
+
+select substr(trans_date,1,7) as month, country, count(id) as trans_count,
+sum(if(state="approved",1,0)) approved_count, sum(amount) as trans_total_amount,
+sum(if(state="approved",amount,0)) as approved_total_amount 
+from Transactions
+group by country, month;
+---------------------------------------------------------------------------------------------
