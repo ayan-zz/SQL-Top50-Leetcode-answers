@@ -1,0 +1,12 @@
+                                                                        ****************************
+                                                                          SQL SORTING AND GROUPING
+                                                                        ****************************
+# Q2356: Number of Unique Subjects Taught By Each Teacher # 
+
+MySQL Query
+
+select teacher_id, count(distinct subject_id) as cnt
+from Teacher
+group by teacher_id;
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
