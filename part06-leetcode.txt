@@ -19,4 +19,30 @@ from Activity
 where activity_date>'2019-06-27' and activity_date<='2019-07-27'
 group by activity_date;
 
----------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------
+Q1070. Product Sales Analysis III
+
+MySQL Query
+
+select product_id,year as first_year, quantity, price
+from Sales
+where (product_id, year) in (select product_id, min(year) from Sales group by product_id);
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Q596. Classes more than 5 students
+
+MySQL Query
+
+select class from Courses
+group by class
+having count(student)>=5;
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Q619. Biggest Single number
+
+MySQL Query
+
+select ifnull(max(num), null) as num from MyNumbers 
+where num in
+(select num from MyNumbers group by num having count(num)=1);
+------------------------------------------------------------------------------------------------------------------------------------------
