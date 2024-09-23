@@ -38,6 +38,16 @@ group by class
 having count(student)>=5;
 
 ------------------------------------------------------------------------------------------------------------------------------------------
+Q1729. Find Followers Count
+
+MySQL Query
+
+select user_id, count(follower_id) as followers_count
+from Followers
+group by user_id
+order by user_id asc;
+
+------------------------------------------------------------------------------------------------------------------------------------------
 Q619. Biggest Single number
 
 MySQL Query
