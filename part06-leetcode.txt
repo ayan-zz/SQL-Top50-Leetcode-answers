@@ -56,3 +56,13 @@ select ifnull(max(num), null) as num from MyNumbers
 where num in
 (select num from MyNumbers group by num having count(num)=1);
 ------------------------------------------------------------------------------------------------------------------------------------------
+Q1045. Customers who brought all Products
+
+MySQL Query
+
+select customer_id from Customer 
+group by customer_id
+having count(distinct product_key)=(select count(*) from Product);
+------------------------------------------------------------------------------------------------------------------------------------------
+                                                                    **************
+
