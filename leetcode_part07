@@ -1,0 +1,12 @@
+                                                                  *********ADVANCED SELECT AND JOINS**********
+Q1731: The Number of Employees which Report to Each Employee
+MySQL Solution:
+
+select emp1.employee_id, emp1.name, count(emp2.reports_to) as reports_count,
+round(avg(emp2.age),0) as average_age
+from employees emp1 inner join employees emp2 on
+emp2.reports_to=emp1.employee_id
+group by emp1.employee_id, emp1.name
+order by emp1.employee_id;
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
