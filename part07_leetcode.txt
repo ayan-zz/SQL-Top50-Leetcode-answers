@@ -8,5 +8,14 @@ from employees emp1 inner join employees emp2 on
 emp2.reports_to=emp1.employee_id
 group by emp1.employee_id, emp1.name
 order by emp1.employee_id;
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------
 
+Q1789: Primary Department of Each Employee
+MYSQL Solution:
+
+select employee_id, department_id from Employee
+where primary_flag='Y' or employee_id
+in (select employee_id from Employee group by employee_id 
+having count(*)=1)
+order by employee_id;
+--------------------------------------------------------------------------------------------------------------------------------------------
