@@ -19,3 +19,13 @@ in (select employee_id from Employee group by employee_id
 having count(*)=1)
 order by employee_id;
 --------------------------------------------------------------------------------------------------------------------------------------------
+
+Q610. Triangle Judgement
+MYSQL Solution:
+
+select x,y,z,
+case when x+y > z and x+z > y and y+z > x then 'Yes'
+else 'No'
+end as Triangle
+from Triangle;
+---------------------------------------------------------------------------------------------------------------------------------------------
