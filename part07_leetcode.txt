@@ -29,3 +29,14 @@ else 'No'
 end as Triangle
 from Triangle;
 ---------------------------------------------------------------------------------------------------------------------------------------------
+
+Q180. Consecutive Numbers
+MySQL Solution
+
+SELECT DISTINCT LOG1.num as ConsecutiveNums 
+FROM Logs LOG1,Logs LOG2,Logs LOG3
+WHERE LOG1.id=LOG2.id-1
+AND LOG2.id=LOG3.id-1
+AND LOG1.num=LOG2.num
+AND LOG2.num=LOG3.num;
+------------------------------------------------------------------------------------------------------------------------------------------------
