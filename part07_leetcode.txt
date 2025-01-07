@@ -58,3 +58,19 @@ from Products P inner join(
     on P.product_id=R.product_id and P.change_date=R.max_date;
 
 ------------------------------------------------------------------------------------------------------------------------------------------
+Q1204. Last Person To fit in The Bus
+MySQL Solution
+
+select person_name from Queue
+where turn=(
+    select max(turn) as turn from
+(
+    select q1.turn
+    from Queue q1 join Queue q2
+    on q1.turn>=q2.turn
+    group by q1.turn
+    having sum(q2.weight)<=1000
+    order by q1.turn 
+    ) as table1
+);
+------------------------------------------------------------------------------------------------------------------------------------------
