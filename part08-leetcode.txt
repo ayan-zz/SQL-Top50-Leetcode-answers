@@ -2,10 +2,21 @@
 
 Q1978: Employees Whose Manager Left The Company
 MySQL Query:
+
 select employee_id from Employees
 where salary< 30000
 and manager_id not in (
     select employee_id from Employees)
 order by employee_id;
 
--------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------
+Q626: Exchange Seats
+MySQL Query:
+
+select if (id<(select max(id) from seat),
+    if(id%2=0, id-1,id+1),
+    if(id%2=0, id-1,id)
+    ) as id, student 
+from Seat
+order by id;
+------------------------------------------------------------------------------------------------------------------------------------------
